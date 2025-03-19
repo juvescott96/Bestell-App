@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.topline{
+    background-color: orange;
+    height: 24;
+    display: flex;
+    align-items: center;
+    padding: 0px 2px 0px 2px;   
+}
+
+footer{
+    background-color: darkblue;
+    height: 24px;
+    width: 100%;
+}
+
+.contenct-wrapper{
+    display: flex;
+}
+
+.left-content{
+    background-color: lightblue;
+}
