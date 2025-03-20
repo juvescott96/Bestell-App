@@ -3,6 +3,16 @@ body{
     padding: 0;
 }
 
+html, body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+}
+
 .topline{
     background-color: orange;
     height: 24;
@@ -12,15 +22,18 @@ body{
 }
 
 footer{
-    background-color: darkblue;
+    background-color: orange;
     height: 24px;
     width: 100%;
 }
 
-.contenct-wrapper{
+.content{
     display: flex;
+    height: 100%;
 }
 
 .left-content{
     background-color: lightblue;
+    width: calc(100% - 150px);
+    height: 100%;
 }
