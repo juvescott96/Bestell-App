@@ -12,3 +12,13 @@ h2{
 p{
     margin: 0;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.icon-right{
+    width: auto;
+    height: 32px;
+}
