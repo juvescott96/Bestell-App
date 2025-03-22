@@ -1,0 +1,35 @@
+.card{
+    display: flex;
+    border: 0.05px solid #F5F5F5;
+    justify-content: space-between;
+}
+.card:hover{
+    background-color: #fed5a2;
+}
+
+.card:hover button {
+    background-color: #fed5a2;
+    border-color: #f8ca92;
+}
+
+.dish-card{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+}
+
+.card-text{
+    color: #F8A506;
+}
+
+.plus{
+    width: 16px;
+    height: 16px;
+}
