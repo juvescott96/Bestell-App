@@ -15,10 +15,10 @@ main{
 
 .topline{
     background-color: orange;
-    height: 24;
+    height: 60px;
     display: flex;
     align-items: center;
-    padding: 0px 2px 0px 2px;   
+    padding: 0px 20px 0px 20px;   
 }
 
 footer{
@@ -33,8 +33,7 @@ footer{
 }
 
 .left-content{
-    background-color: lightblue;
-    width: calc(100% - 150px);
+    width: calc(100% - 300px);
     height: 100%;
     display: flex;
     align-items: center;
@@ -45,4 +44,25 @@ footer{
     display: flex;
     justify-content: center;
     width: 400px;
+}
+
+.img-header{
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.evaluation{
+    color: orange;
+    font-size: 10px;
+}
+
+.headline{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    height: 60px;
+    width: calc(100% - 20px);
+    padding-left: 20px;
 }
