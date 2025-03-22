@@ -8,7 +8,9 @@ function getDishesContent(indexDishes) {
                 <p>mit ${dish.description}</p>
                 <p class="card-text">${(dish.price).toFixed(2).replace('.', ',')}€</p>
             </div>
-            <button type="button"> <img class="plus" src="./assets/icons/plus.png" alt="+ click"></button>
+            <button type="button" onclick="addDishToCart('${dish.name}', ${dish.price})">
+             <img class="plus" src="./assets/icons/plus.png" alt="+ click">
+             </button>
         </div>
     `;
     return dishContent;

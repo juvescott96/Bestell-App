@@ -18,3 +18,19 @@ function load(){
     }
     dessertRef.innerHTML = dessertsContent;
 }
+
+function addDishToCart(dishName, dishPrice){
+    let cart = document.getElementById('basket');
+    let cartContent = cart.innerHTML;
+    
+    let newCartItem = `
+        <div class="cart-item">
+            <p>${dishName}</p>
+            <p>${dishPrice.toFixed(2).replace('.', ',')}€</p>
+        </div>
+    `;
+
+    cart.innerHTML = cartContent + newCartItem;
+}
+
+    
