@@ -25,9 +25,9 @@ function getDessertContent(indexDessert) {
                 <p>mit ${dessert.description}</p>
                 <p class="card-text">${(dessert.price).toFixed(2).replace('.', ',')}€</p>
             </div>
-            <button type="button"> <img class="plus" src="./assets/icons/plus.png" alt="+ click"></button>
-
-            
+            <button type="button" onclick="addDishToCart('${dessert.name}', ${dessert.price})">
+             <img class="plus" src="./assets/icons/plus.png" alt="+ click">
+             </button>
         </div>
     `;
     return dessertContent;
