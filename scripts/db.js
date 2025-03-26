@@ -5,19 +5,19 @@ let myDishes = [
         "description": "Tomaten, Mozzarella, Basilikum",
     },
     {
-        "name": "Pizza Margherita",
-        "price": 9.99,
-        "description": "Tomaten, Mozzarella, Basilikum",
+        "name": "Pizza Salami",
+        "price": 10.99,
+        "description": "Tomaten, Mozzarella, Salami",
     },
     {
-        "name": "Pizza Margherita",
-        "price": 9.99,
-        "description": "Tomaten, Mozzarella, Basilikum",
+        "name": "Spaghetti Carbonara",
+        "price": 11.99,
+        "description": "Speck, Ei, Sahne",
     },
     {
-        "name": "Pizza Margherita",
-        "price": 9.99,
-        "description": "Tomaten, Mozzarella, Basilikum",
+        "name": "Spaghetti Bolognese",
+        "price": 8.99,
+        "description": "Hackfleisch, Tomaten, Zwiebeln",
     },
 ]
 
@@ -28,9 +28,9 @@ let myDesserts = [
         "description": "Kaffee, Mascarpone, Kakao",
     },
     {
-        "name": "Tiramisu",
+        "name": "Panna Cotta",
         "price": 4.99,
-        "description": "Kaffee, Mascarpone, Kakao",
+        "description": "Sahne, Vanille, Himbeersauce",
     },
 
 ]
