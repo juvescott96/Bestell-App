@@ -39,6 +39,8 @@ function renderBasket() {
     let basketRef = document.getElementById('basket');
     basketRef.innerHTML = "";
 
+    if (basket.length === 0) return;
+
     let subtotal = 0;
     const deliveryCost = 5.00;
 
