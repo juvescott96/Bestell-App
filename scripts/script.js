@@ -39,7 +39,13 @@ function renderBasket() {
     let basketRef = document.getElementById('basket');
     basketRef.innerHTML = "";
 
+    let subtotal = 0;
+    const deliveryCost = 5.00;
+
     basket.forEach(dish => {
+        let itemTotal = dish.price * dish.quantity;
+        subtotal += itemTotal;
+
         let basketContent = `
             <div class="basket-card">
                 <p>${dish.name}</p>
@@ -48,7 +54,7 @@ function renderBasket() {
                      <button onclick="changeQuantity('${dish.name}', -1)">
                          <img class="icon" src="./assets/icons/minus.png" alt="- button">
                      </button>
-                     <p>${dish.quantity}</p> <!-- Zeigt die Anzahl -->
+                     <p>${dish.quantity}</p>
                      <button onclick="changeQuantity('${dish.name}', 1)">
                          <img class="icon" src="./assets/icons/plus.png" alt="+ button">
                      </button>
@@ -62,6 +68,17 @@ function renderBasket() {
         `;
         basketRef.innerHTML += basketContent;
     });
+
+let total = subtotal + deliveryCost;
+
+let summaryContent = `
+<div class="basket-summary">
+    <p>Zwischensumme: <span>${subtotal.toFixed(2).replace('.', ',')}€</span></p>
+    <p>Lieferkosten: <span>${deliveryCost.toFixed(2).replace('.', ',')}€</span></p>
+    <p><strong>Gesamt: <span>${total.toFixed(2).replace('.', ',')}€</span></strong></p>
+</div>
+`;
+basketRef.innerHTML += summaryContent;
 }
 
 function changeQuantity(name, amount) {
