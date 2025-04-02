@@ -39,7 +39,10 @@ function renderBasket() {
     let basketRef = document.getElementById('basket');
     basketRef.innerHTML = "";
 
-    if (basket.length === 0) return;
+    if (basket.length === 0) {
+        basketRef.innerHTML = "";
+        return;
+    }
 
     let subtotal = 0;
     const deliveryCost = 5.00;
@@ -81,6 +84,13 @@ let summaryContent = `
 </div>
 `;
 basketRef.innerHTML += summaryContent;
+
+let orderButton = `
+<div class="order-container">
+    <button class="order-button" onclick="placeOrder()">Bezahlen</button>
+</div>
+`;
+basketRef.innerHTML += orderButton;
 }
 
 function changeQuantity(name, amount) {
@@ -100,4 +110,10 @@ function changeQuantity(name, amount) {
 function deleteDishBasket(name) {
     basket = basket.filter(dish => dish.name !== name);
     renderBasket();
+}
+
+function placeOrder() {
+    let basketRef = document.getElementById('basket');
+    basket = [];
+    basketRef.innerHTML = "<p class='ordered' >Vielen Dank! Test!</p>";
 }
