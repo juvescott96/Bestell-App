@@ -89,3 +89,27 @@
     height: 300px;
     font-size: 24px;
 }
+
+.mobile-basket-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    background-color: orange;
+    border-top: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .basket-content {
+        display: none;
+    } 
+    .mobile-basket-bar {
+        display: block;
+    }
+}
