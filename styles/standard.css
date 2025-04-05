@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -16,10 +17,6 @@ body::-webkit-scrollbar {
 html, body{
     display: flex;
     flex-direction: column;
-}
-
-main{
-    flex: 1;
 }
 
 header{
@@ -39,6 +36,7 @@ footer{
 .content{
     display: flex;
     height: 100%;
+    flex: 1;
 }
 
 .left-content{

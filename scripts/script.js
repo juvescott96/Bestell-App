@@ -36,22 +36,27 @@ function addDishToBasket(name, price) {
 }
 
 function renderBasket() {
-    let basketRef = document.getElementById('basket');
-    basketRef.innerHTML = "";
+    const basketDesktopRef = document.getElementById('basketDesktop');
+    const basketMobileRef = document.getElementById('basketMobile');
+    basketDesktopRef.innerHTML = "";
+    basketMobileRef.innerHTML = "";
 
     if (basket.length === 0) {
-        basketRef.innerHTML = "";
+        basketDesktopRef.innerHTML = "";
+        basketMobileRef.innerHTML = "";
         return;
     }
 
     let subtotal = 0;
     const deliveryCost = 5.00;
 
+    let basketContent = "";
+
     basket.forEach(dish => {
         let itemTotal = dish.price * dish.quantity;
         subtotal += itemTotal;
 
-        let basketContent = `
+         basketContent += `
             <div class="basket-card">
                 <p>${dish.name}</p>
                 <div class="basket-card-body-row">
@@ -71,7 +76,7 @@ function renderBasket() {
                 </div>
             </div>
         `;
-        basketRef.innerHTML += basketContent;
+    
     });
 
 let total = subtotal + deliveryCost;
@@ -83,14 +88,16 @@ let summaryContent = `
     <p><strong>Gesamt: <span>${total.toFixed(2).replace('.', ',')}€</span></strong></p>
 </div>
 `;
-basketRef.innerHTML += summaryContent;
+
 
 let orderButton = `
 <div class="order-container">
     <button class="order-button" onclick="placeOrder()">Bezahlen</button>
 </div>
 `;
-basketRef.innerHTML += orderButton;
+
+basketDesktopRef.innerHTML = basketContent + summaryContent + orderButton;
+basketMobileRef.innerHTML = basketContent + summaryContent + orderButton;
 }
 
 function changeQuantity(name, amount) {
@@ -113,7 +120,14 @@ function deleteDishBasket(name) {
 }
 
 function placeOrder() {
-    let basketRef = document.getElementById('basket');
+    const basketDesktopRef = document.getElementById('basketDesktop');
+    const basketMobileRef = document.getElementById('basketMobile');
     basket = [];
-    basketRef.innerHTML = "<p class='ordered' >Vielen Dank! Test!</p>";
+    basketDesktopRef.innerHTML = "<p class='ordered'>Vielen Dank! Test!</p>";
+    basketMobileRef.innerHTML = "<p class='ordered'>Vielen Dank! Test!</p>";
 }
+
+function toggleMobileBasket() {
+    const basket = document.getElementById("mobileBasketContent");
+    basket.classList.toggle("open");
+  }
