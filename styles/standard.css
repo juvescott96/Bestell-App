@@ -37,6 +37,9 @@ footer{
     display: flex;
     height: 100%;
     flex: 1;
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.95)), url('/assets/img/pasta.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .left-content{
@@ -45,6 +48,7 @@ footer{
     display: flex;
     align-items: center;
     flex-direction: column;
+
 }
 
 .menu{
@@ -114,3 +118,64 @@ footer{
         width: 100%;
     }
 }
+
+@media (max-width: 600px) {
+    .img-header{
+        height: 140px;
+    }
+
+    .Pizza-Logo {
+        width: 60px;
+        height: 60px;
+        top: 170px;
+    }
+    .menu-card{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+    
+ @media (max-width: 475px) {
+        .img-header{
+            height: 120px;
+        }
+    
+        .Pizza-Logo {
+            width: 40px;
+            height: 40px;
+            top: 160px;
+        }
+
+        .img-dishes{
+            margin: 10px 0px 5px 0px;
+            height: 80px;
+        }
+
+
+        }
+
+        @media (max-width: 375px) {
+            .img-header{
+                height: 100px;
+            }
+        
+            .Pizza-Logo {
+                width: 30px;
+                height: 30px;
+                top: 145px;
+            }
+
+            .headline{
+                height: 50px;
+            }
+
+            .img-dishes{
+                margin: 0px;
+                height: 60px;
+            }
+
+            footer{
+                height: 70px;
+            }
+
+     }

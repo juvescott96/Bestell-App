@@ -46,3 +46,54 @@ button{
     width: 16px;
     height: 16px;
 }
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 14px;
+    }
+    h4 {
+        font-size: 12px;
+    }
+    
+    p{
+        font-size: 10px;
+    }
+
+ }
+
+ @media (max-width: 475px) {
+        h1{
+            font-size: 16px;
+        }
+ }
+
+  @media (max-width: 375px) {
+    h1{
+        font-size: 14px;
+    }
+
+    h3{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .evaluation{
+        font-size: 8px;
+    }
+
+    .line{
+        height: 30px;
+    }
+
+    .icon-right{
+        height: 24px;
+    }
+
+    a{
+        font-size: 12px;
+    }
+}
