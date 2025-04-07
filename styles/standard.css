@@ -17,6 +17,7 @@ body::-webkit-scrollbar {
 html, body{
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -135,7 +136,7 @@ footer{
     }
 }
     
- @media (max-width: 475px) {
+@media (max-width: 475px) {
         .img-header{
             height: 120px;
         }
@@ -154,7 +155,7 @@ footer{
 
         }
 
-        @media (max-width: 375px) {
+@media (max-width: 375px) {
             .img-header{
                 height: 100px;
             }
@@ -179,3 +180,27 @@ footer{
             }
 
      }
+
+     @media (max-width: 320px) {
+
+        header{
+            height: 40px;
+        }
+
+        .img-header{
+            height: 80px;
+        }
+    
+        .Pizza-Logo {
+            width: 20px;
+            height: 20px;
+            top: 110px;
+        }
+        .headline {
+            height: 30px;
+        }
+        .img-dishes{
+            height: 40px;
+        }
+
+ }     
