@@ -93,7 +93,7 @@
 .mobile-basket-bar {
     display: none;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
@@ -112,16 +112,17 @@
     bottom: -100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    background-color: #fff;
-    border-radius: 20px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 1)), url('/assets/img/pasta.jpg');
+    background-size: cover;
+    background-position: center;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     transition: bottom 0.3s ease-in-out;
     z-index: 998;
-    max-height: 60%;
+    height: 100vh;
     overflow-y: auto;
-
 }
+
 
 @media (max-width: 1000px) {
     .basket-content {
@@ -137,6 +138,6 @@
     }
     
     .mobile-basket-content.open {
-        bottom: 65px;
+        bottom: 0px;
     }
 }
