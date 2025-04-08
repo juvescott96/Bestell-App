@@ -1,3 +1,21 @@
+let myAppetizers = [
+    {
+        "name": "Bruschetta",
+        "price": 5.99,
+        "description": "Tomaten, Basilikum, Knoblauch",
+    },
+    {
+        "name": "Caprese",
+        "price": 6.99,
+        "description": "Mozzarella, Tomaten, Basilikum",
+    },
+    {
+        "name": "Antipasti-Platte",
+        "price": 8.99,
+        "description": "Oliven, Schinken, Käse",
+    },
+]
+
 let myDishes = [
     {
         "name": "Pizza Margherita",
