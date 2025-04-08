@@ -35,12 +35,9 @@ function addDishToBasket(name, price) {
     renderBasket();
 }
 function renderBasket() {
-    const basketDesktopRef = document.getElementById('basketDesktop');
-    const basketMobileRef = document.getElementById('basketMobile');
-    basketDesktopRef.innerHTML = "";
-    basketMobileRef.innerHTML = "";
-    if (basket.length === 0) {
-        return;}
+    let basketRefs = [document.getElementById('basketDesktop'), document.getElementById('basketMobile')];
+    basketRefs.forEach(ref => ref.innerHTML = "");
+    if (basket.length === 0) return;
     let subtotal = 0;
     const deliveryCost = 5.00;
     let basketContent = basket.map(dish => {
@@ -52,8 +49,7 @@ function renderBasket() {
     const summaryContent = renderBasketSummary(subtotal, deliveryCost, total);
     const orderButton = renderOrderButton();
     const finalContent = basketContent + summaryContent + orderButton;
-    basketDesktopRef.innerHTML = finalContent;
-    basketMobileRef.innerHTML = finalContent;
+    basketRefs.forEach(ref => ref.innerHTML = finalContent);
 }
 function changeQuantity(name, amount) {
     let dish = basket.find(dish => dish.name === name);

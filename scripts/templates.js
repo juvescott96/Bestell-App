@@ -15,8 +15,6 @@ function getAppetizerContent(indexAppetizer) {
     `;
     return appetizerContent;
 }
-
-
 function getDishesContent(indexDishes) {
     let dish =  myDishes[indexDishes];
     let dishContent = `
@@ -33,7 +31,6 @@ function getDishesContent(indexDishes) {
     `;
     return dishContent;
 }
-
 function getDessertContent(indexDessert) {
     let dessert =  myDesserts[indexDessert];
     let dessertContent = `
@@ -50,7 +47,6 @@ function getDessertContent(indexDessert) {
     `;
     return dessertContent;
 }
-
 function renderBasketItem(dish) {
     return `
         <div class="basket-card">
