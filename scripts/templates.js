@@ -58,13 +58,9 @@ function placeOrder() {
     const basketDesktopRef = document.getElementById('basketDesktop');
     const basketMobileRef = document.getElementById('basketMobile');
     basket = [];
-    basketDesktopRef.innerHTML = `
-                                    <p class='ordered'>Vielen Dank!</p>
-                                    <p class='ordered'>Die Seite lädt in 3 Sekunden neu!</p>`;
-    basketMobileRef.innerHTML = `
-                                    <p class='ordered'>Vielen Dank!</p>
-                                    <p class='ordered'>Die Seite lädt in 3 Sekunden neu!</p>`;
-    setTimeout(function() {
-        location.reload();
-      }, 3000);
+    basketDesktopRef.innerHTML = `<p class='ordered'>Vielen Dank!</p>`;
+    basketMobileRef.innerHTML = `<p class='ordered'>Vielen Dank!</p>`;
+     setTimeout(function() {
+     basketDesktopRef.innerHTML = '';
+     }, 3000);
 }
