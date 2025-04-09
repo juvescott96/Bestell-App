@@ -5,6 +5,7 @@
 }
 .card:hover{
     background-color: #fed5a2;
+    cursor: pointer;
 }
 
 .card:hover button {

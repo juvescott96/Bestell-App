@@ -1,51 +1,17 @@
 
-function getAppetizerContent(indexAppetizer) {
-    let appetizer =  myAppetizers[indexAppetizer];
-    let appetizerContent = `
-        <div class="card">
+function getDishCard(item) {
+    return `
+        <div class="card" onclick="addDishToBasket('${item.name}', ${item.price})">
             <div class="card-body">
-                <h4>${appetizer.name}</h4>
-                <p>mit ${appetizer.description}</p>
-                <p class="card-text">${(appetizer.price).toFixed(2).replace('.', ',')}€</p>
+                <h4>${item.name}</h4>
+                <p>mit ${item.description}</p>
+                <p class="card-text">${item.price.toFixed(2).replace('.', ',')}€</p>
             </div>
-            <button type="button" onclick="addDishToBasket('${appetizer.name}', ${appetizer.price})">
-             <img class="icon" src="./assets/icons/plus.png" alt="+ click">
-             </button>
+            <button type="button">
+                <img class="icon" src="./assets/icons/plus.png" alt="+ click">
+            </button>
         </div>
     `;
-    return appetizerContent;
-}
-function getDishesContent(indexDishes) {
-    let dish =  myDishes[indexDishes];
-    let dishContent = `
-        <div class="card">
-            <div class="card-body">
-                <h4>${dish.name}</h4>
-                <p>mit ${dish.description}</p>
-                <p class="card-text">${(dish.price).toFixed(2).replace('.', ',')}€</p>
-            </div>
-            <button type="button" onclick="addDishToBasket('${dish.name}', ${dish.price})">
-             <img class="icon" src="./assets/icons/plus.png" alt="+ click">
-             </button>
-        </div>
-    `;
-    return dishContent;
-}
-function getDessertContent(indexDessert) {
-    let dessert =  myDesserts[indexDessert];
-    let dessertContent = `
-        <div class="card">
-            <div class="card-body">
-                <h4>${dessert.name}</h4>
-                <p>mit ${dessert.description}</p>
-                <p class="card-text">${(dessert.price).toFixed(2).replace('.', ',')}€</p>
-            </div>
-            <button type="button" onclick="addDishToBasket('${dessert.name}', ${dessert.price})">
-             <img class="icon" src="./assets/icons/plus.png" alt="+ click">
-             </button>
-        </div>
-    `;
-    return dessertContent;
 }
 function renderBasketItem(dish) {
     return `

@@ -1,27 +1,15 @@
 let basket = [];
 
-function load(){
-    let appetizerRef = document.getElementById('appetizer');
-    let mainCoursesRef = document.getElementById('main-courses');
-    let dessertRef = document.getElementById('dessert');
-    appetizerRef.innerHTML = "";
-    mainCoursesRef.innerHTML = "";
-    dessertRef.innerHTML = "";
-    let appetizersContent = '';
-    for (let indexAppetizer = 0; indexAppetizer < myAppetizers.length; indexAppetizer++) {
-        appetizersContent += getAppetizerContent(indexAppetizer);
-    }
-    appetizerRef.innerHTML = appetizersContent;
-    let mainCoursesContent = '';
-    for (let indexDishes = 0; indexDishes < myDishes.length; indexDishes++) {
-        mainCoursesContent += getDishesContent(indexDishes);
-    }
-    mainCoursesRef.innerHTML = mainCoursesContent;
-    let dessertsContent = '';
-    for (let indexDessert = 0; indexDessert < myDesserts.length; indexDessert++) {
-        dessertsContent += getDessertContent(indexDessert);
-    }
-    dessertRef.innerHTML = dessertsContent;
+function load() {
+    const categories = [
+        { id: 'appetizer', items: myAppetizers },
+        { id: 'main-courses', items: myDishes },
+        { id: 'dessert', items: myDesserts }
+    ];
+    categories.forEach(category => {
+        const container = document.getElementById(category.id);
+        container.innerHTML = category.items.map(item => getDishCard(item)).join('');
+    });
 }
 function addDishToBasket(name, price) {
     let existingDish = basket.find(dish => dish.name === name);

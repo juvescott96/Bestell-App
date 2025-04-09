@@ -32,11 +32,6 @@ let myDishes = [
         "price": 11.99,
         "description": "Speck, Ei, Sahne",
     },
-    {
-        "name": "Spaghetti Bolognese",
-        "price": 8.99,
-        "description": "Hackfleisch, Tomaten, Zwiebeln",
-    },
 ]
 
 let myDesserts = [
@@ -49,6 +44,11 @@ let myDesserts = [
         "name": "Panna Cotta",
         "price": 4.99,
         "description": "Sahne, Vanille, Himbeersauce",
+    },
+    {
+        "name": "Tartufo",
+        "price": 5.99,
+        "description": "Schokoladeneis, Nüsse, Sahne",
     },
 
 ]
