@@ -26,30 +26,33 @@ function renderBasket() {
     let basketRefs = [document.getElementById('basketDesktop'), document.getElementById('basketMobile')];
     basketRefs.forEach(ref => ref.innerHTML = "");
     if (basket.length === 0) return;
-    let subtotal = 0;
+    let subtotal = calculateSubtotal(basket);
     const deliveryCost = 5.00;
-    let basketContent = basket.map(dish => {
-        let itemTotal = dish.price * dish.quantity;
-        subtotal += itemTotal;
-        return renderBasketItem(dish);
-    }).join('');
     const total = subtotal + deliveryCost;
+    const basketContent = basket.map(dish => renderBasketItem(dish)).join('');
+    const finalContent = generateFinalContent(basketContent, subtotal, deliveryCost, total);
+    basketRefs.forEach(ref => ref.innerHTML = finalContent);
+}
+
+function calculateSubtotal(basket) {
+    return basket.reduce((subtotal, dish) => {
+        return subtotal + (dish.price * dish.quantity);
+    }, 0);
+}
+
+function generateFinalContent(basketContent, subtotal, deliveryCost, total) {
     const summaryContent = renderBasketSummary(subtotal, deliveryCost, total);
     const orderButton = renderOrderButton();
-    const finalContent = basketContent + summaryContent + orderButton;
-    basketRefs.forEach(ref => ref.innerHTML = finalContent);
+    return basketContent + summaryContent + orderButton;
 }
 function changeQuantity(name, amount) {
     let dish = basket.find(dish => dish.name === name);
     if (!dish) return;
-
     if (amount > 0 && dish.quantity >= 20) return;
     dish.quantity += amount;
-
     if (dish.quantity <= 0) {
         basket = basket.filter(d => d.name !== name); 
     }
-
     renderBasket();
 }
 function deleteDishBasket(name) {
@@ -59,12 +62,11 @@ function deleteDishBasket(name) {
 function toggleMobileBasket() {
     const basket = document.getElementById("mobileBasketContent");
     const isOpen = basket.classList.contains('open');
-
     if (isOpen) {
       basket.classList.remove('open');
-      document.body.style.overflow = ''; // Scroll wieder freigeben
+      document.body.style.overflow = '';
     } else {
       basket.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Scroll sperren
+      document.body.style.overflow = 'hidden';
     }
   }
