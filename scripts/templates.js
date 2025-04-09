@@ -62,5 +62,6 @@ function placeOrder() {
     basketMobileRef.innerHTML = `<p class='ordered'>Vielen Dank!</p>`;
      setTimeout(function() {
      basketDesktopRef.innerHTML = '';
+     basketMobileRef.innerHTML = '';
      }, 3000);
 }

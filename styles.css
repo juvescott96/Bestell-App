@@ -1,17 +1,9 @@
+
 body{
     margin: 0;
     padding: 0;
     min-height: 100vh;
 }
-
-body::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background-color: orange;
-    border-radius: 10px;
-  }
 
 
 html, body{

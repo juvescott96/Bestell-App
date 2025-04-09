@@ -58,5 +58,13 @@ function deleteDishBasket(name) {
 }
 function toggleMobileBasket() {
     const basket = document.getElementById("mobileBasketContent");
-    basket.classList.toggle("open");
+    const isOpen = basket.classList.contains('open');
+
+    if (isOpen) {
+      basket.classList.remove('open');
+      document.body.style.overflow = ''; // Scroll wieder freigeben
+    } else {
+      basket.classList.add('open');
+      document.body.style.overflow = 'hidden'; // Scroll sperren
+    }
   }
